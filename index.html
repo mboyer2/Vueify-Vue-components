@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-  	<script 
-  	src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.6/vue.min.js">
-  	</script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://unpkg.com/vue"></script>
     <link rel="stylesheet" href="main.css">
+
   </head>
   <body>
   	<div id="app">
-  		<my-button-link></my-button-link>
+      <div class="container">
+        
+        <jumbotron 
+        v-for="critter in critters"
+        v-bind:critter="critter"
+        :key="JSON.stringify(critter)" 
+        ></jumbotron>
+        <!-- look this up :key in v-bind-->
+
+      </div>
     </div>
-  
+    
+
     <script src="main.js"></script>
   </body>
 </html>
